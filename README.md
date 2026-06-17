@@ -31,30 +31,30 @@ An AI-powered multi-agent CNC chatbot for **smart manufacturing automation**, bu
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                     Frontend (agent-ui)                  │
+│                     Frontend (agent-ui)                 │
 │              Next.js 15 · Tailwind · Radix UI           │
 └──────────────────────┬──────────────────────────────────┘
                        │ HTTP / WebSocket
        ┌───────────────┴───────────────┐
        │                               │
 ┌──────┴──────┐              ┌─────────┴─────────┐
-│  Playground │              │   Auth Backend     │
-│  (FastAPI)  │              │   (Express.js)     │
-│  Port 7777  │              │   Port 5000        │
+│  Playground │              │   Auth Backend    │
+│  (FastAPI)  │              │   (Express.js)    │
+│  Port 7777  │              │   Port 5000       │
 └──────┬──────┘              └───────────────────┘
        │
-┌──────┴───────────────────────────────────────┐
-│              Agent Team (agentTeam/)          │
-│                                              │
+┌──────┴──────────────────────────────────────┐
+│              Agent Team (agentTeam/)        │
+│                                             │
 │  ┌─────────┐  ┌──────────────┐  ┌─────────┐ │
 │  │ Mentor  │→ │ Predict &    │→ │Observer │ │
 │  │ Agent   │  │ Plan Agent   │  │ Agent   │ │
 │  └─────────┘  └──────────────┘  └────┬────┘ │
 └──────────────────────────────────────┼──────┘
                                        │
-┌──────────────────────────────────────┼──────┐
-│          Domain Agents (agents/)     │      │
-│                                      ▼      │
+┌──────────────────────────────────────┼─────┐
+│          Domain Agents (agents/)     │     │
+│                                      ▼     │
 │  ┌──────────┐ ┌──────────┐ ┌─────────────┐ │
 │  │ CNC      │ │ OEE      │ │ Cycle Time  │ │
 │  │ Agent    │ │ Agent    │ │ Agent       │ │
@@ -63,7 +63,7 @@ An AI-powered multi-agent CNC chatbot for **smart manufacturing automation**, bu
 │  │ Six      │ │Knowledge │ │ Web         │ │
 │  │ Sigma    │ │ Agent    │ │ Agent       │ │
 │  └──────────┘ └──────────┘ └─────────────┘ │
-└─────────────────────────────────────────────┘
+└────────────────────────────────────────────┘
                        │
               ┌────────┴────────┐
               │  PostgreSQL     │
@@ -199,21 +199,21 @@ cd ..
 Open **separate terminals** for each service:
 
 ```bash
-# Terminal 1 — Playground API Server (port 7777)
+# Terminal 1 - Playground API Server (port 7777)
 python -m uvicorn client.playground_app:app --host 127.0.0.1 --port 7777
 
-# Terminal 2 — Auth Backend (port 5000)
+# Terminal 2 - Auth Backend (port 5000)
 cd BACKEND
 npm run dev
 
-# Terminal 3 — Agent UI Frontend (port 3000)
+# Terminal 3 - Agent UI Frontend (port 3000)
 cd agent-ui
 npm run dev
 
-# Terminal 4 (Optional) — Chat API (port 8000)
+# Terminal 4 (Optional) - Chat API (port 8000)
 uvicorn api_app:app --host 127.0.0.1 --port 8000
 
-# Terminal 5 (Optional) — CSV Query API
+# Terminal 5 (Optional) - CSV Query API
 uvicorn csv_api:app --host 127.0.0.1 --port 8001
 ```
 
@@ -242,22 +242,22 @@ Navigate to **http://localhost:3000** in your browser.
 ## API Endpoints
 
 ### Playground API (`localhost:7777`)
-- `POST /v1/playground/agents` — List available agents
-- `POST /v1/playground/agents/{agent_id}/runs` — Run an agent
-- `POST /v1/playground/transcribe` — Transcribe audio input
+- `POST /v1/playground/agents` - List available agents
+- `POST /v1/playground/agents/{agent_id}/runs` - Run an agent
+- `POST /v1/playground/transcribe` - Transcribe audio input
 
 ### Chat API (`localhost:8000`)
-- `POST /chat` — Send a message to the Observer Agent
-- `GET /sessions` — List all chat sessions
-- `GET /sessions/{session_id}` — Get a specific session
-- `DELETE /sessions/{session_id}` — Delete a session
+- `POST /chat` - Send a message to the Observer Agent
+- `GET /sessions` - List all chat sessions
+- `GET /sessions/{session_id}` - Get a specific session
+- `DELETE /sessions/{session_id}` - Delete a session
 
 ### CSV Query API (`localhost:8001`)
-- `POST /query` — Natural language query over OEE data (requires JWT)
+- `POST /query` - Natural language query over OEE data (requires JWT)
 
 ### Auth Backend (`localhost:5000`)
-- `POST /api/auth/register` — Register a new user
-- `POST /api/auth/login` — Login and receive JWT token
+- `POST /api/auth/register` - Register a new user
+- `POST /api/auth/login` - Login and receive JWT token
 
 ---
 

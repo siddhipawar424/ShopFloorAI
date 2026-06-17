@@ -6,24 +6,24 @@
   <img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white" />
 </p>
 
-# ShopFloorAI - AI-Powered Multi-Agent System for Smart Manufacturing
+# ShopFloorAI - AI-Powered Multi-Agent System for Smart Manufacturing Automation
 
-An AI-powered multi-agent CNC chatbot for **smart manufacturing automation**, built with the [Agno](https://github.com/agno-agi/agno) framework, **Google Gemini**, and a modern **Next.js** frontend. The platform orchestrates specialized AI agents to analyze CNC machine performance, OEE metrics, cycle times, Six Sigma quality data, and more — providing real-time diagnostics, predictions, and strategic guidance.
+An AI-powered multi-agent CNC chatbot for **smart manufacturing automation**, built with the [Agno](https://github.com/agno-agi/agno) framework, **Google Gemini**, and a modern **Next.js** frontend. The platform orchestrates specialized AI agents to analyze CNC machine performance, OEE metrics, cycle times, Six Sigma quality data, and more - providing real-time diagnostics, predictions, and strategic guidance.
 
 ---
 
 ## Features
 
-- **Multi-Agent Architecture** — Hierarchical agent team (Observer → Predict & Plan → Mentor) with specialized domain agents
-- **OEE & CNC Analytics** — Natural language queries over machine performance data via AI-generated SQL
-- **Six Sigma Knowledge Base** — Vector-embedded Six Sigma expertise with RAG retrieval
-- **Cycle Time Analysis** — Deep analysis of manufacturing cycle time patterns
-- **Web Research Agent** — Real-time web search integration via DuckDuckGo
-- **Multilingual Support** — English, Hindi (हिंदी), and Hinglish with auto-detection
-- **Voice Input** — Audio transcription powered by Gemini for hands-free queries
-- **Session Persistence** — PostgreSQL-backed chat history with session management
-- **JWT Authentication** — Secure auth backend with login/registration
-- **Modern UI** — Next.js 15 + Tailwind CSS + Radix UI + Framer Motion frontend
+- **Multi-Agent Architecture** - Hierarchical agent team (Observer → Predict & Plan → Mentor) with specialized domain agents
+- **OEE & CNC Analytics** - Natural language queries over machine performance data via AI-generated SQL
+- **Six Sigma Knowledge Base** - Vector-embedded Six Sigma expertise with RAG retrieval
+- **Cycle Time Analysis** - Deep analysis of manufacturing cycle time patterns
+- **Web Research Agent** - Real-time web search integration via DuckDuckGo
+- **Multilingual Support** - English, Hindi (हिंदी), and Hinglish with auto-detection
+- **Voice Input** - Audio transcription powered by Gemini for hands-free queries
+- **Session Persistence** - PostgreSQL-backed chat history with session management
+- **JWT Authentication** - Secure auth backend with login/registration
+- **Modern UI** - Next.js 15 + Tailwind CSS + Radix UI + Framer Motion frontend
 
 ---
 

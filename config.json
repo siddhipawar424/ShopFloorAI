@@ -1,0 +1,39 @@
+{
+  "mcpServers": {
+    "tenant-cnc-sixsigma-agent": {
+      "command": "python",
+      "args": ["mcp_server.py", "--port", "3001"],
+      "transport": "streamable-http",
+      "host": "http://127.0.0.1:3001/mcp",
+      "port": 3001,
+      "tools": [
+        {
+          "name": "query_cnc",
+          "description": "Query CNC/OEE data and get GPT-style answer"
+        },
+        {
+          "name": "six_sigma_tool",
+          "description": "Ask questions to the Six Sigma knowledge base"
+        },
+        {
+          "name": "query_cycle_time",
+          "description": "Query CNC/cycle_time data and get GPT-style answer"
+        }
+      ],
+      "resources": [
+        {
+          "name": "oee://vector_store_info",
+          "description": "Vector store configuration information for CNC/OEE"
+        },
+        {
+          "name": "sixsigma://knowledge_base_info",
+          "description": "Vector store / knowledge base information for Six Sigma"
+        },
+        {
+          "name": "cycle_time://vector_store_info",
+          "description": "Vector store configuration information for CNC/cycle_time"
+        }
+      ]
+    }
+  }
+}
